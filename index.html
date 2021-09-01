@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="SHORTCUT.png">
+<title> DocTron | TRON  Safest Passive Income Platform </title>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="tronweb.js"></script>
+<script src="matrix/abic4cac4ca.js?1"></script>
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<link rel="stylesheet" href="../unpkg.com/%40coreui/coreui%403.3.0/dist/css/coreui.min.css">
+<link rel="stylesheet" href="../unpkg.com/%40coreui/icons%402.0.0-beta.3/css/free.min.css">
+<link href="../fonts.googleapis.com/css21c4d1c4d.css?family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-size: 16px;
+  font-family: 'Roboto Mono', sans-serif;
+  background: url(matrix/dark.jpg) 50% 50% fixed;
+}
+h4 {
+  color: rgb(255, 93, 27);159, 190, 150 orange
+}
+input {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: rgb(255, 93, 27) !important;
+}
+input:focus {
+  box-shadow: white !important;
+}
+textarea {
+  color: white;
+  resize: none;
+}
+.form-control:focus {
+  border: 1px solid rgb(49, 92, 216);blue
+}
+a {
+  color: rgb(255, 93, 27) !important;198,233, 111
+}
+.c-app {
+  color: rgb(220, 235, 220);220, 235, 220
+}
+.c-header {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.c-body {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.c-footer {
+  background-color: rgba(159, 190, 150, 0.6);
+}
+.card {
+  background-color: rgba(49, 92, 216, 0.6);140, 150, 140, 0.6
+}
+.card-accent-success {
+  border-top: 2px solid rgb(49, 92, 216) !important;150, 200, 150
+}
+.card-header {
+  height: 48px;
+  background-color: rgba(49, 92, 216, 0.8);
+}
+.card-bank {
+  border: 0px;
+  clip-path: polygon(0% 50px, 50px 0%, 100% 0%, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0% 100%);
+  box-shadow: 0 0 50px rgba(233, 54, 213, 0.8);150, 200, 150, 0.8
+}
+.card-bank-status {
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  width: 45px;
+  height: 45px;
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+  background-color: rgba(233, 54, 213, 0.9);110, 160, 110, 0.9
+}
+.card-bank-status-active {
+  background-color: rgba(233, 54, 213, 0.9) !important;210, 260, 210, 0.9
+}
+.card-bank-status-after {
+  position: absolute;
+  right: 15px;
+  bottom: 16px;
+  width: 45px;
+  height: 45px;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  background-color: rgba(233, 54, 213, 0.9);
+}
+.btn-success {
+  clip-path: polygon(0% 50px, 50px 0%, 100% 0%, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0% 100%);
+  border: 0px;
+  border-radius: 0px;
+  
+  padding: 15px 45px;
+}
+.btn-success:hover {
+  background: radial-gradient(#aabbaa, #ff5557);
+}
+.btn-success-light {
+  border: 3px solid #ff5557;
+  border-radius: 20px;
+  padding: 15px 45px;
+  color: white !important;
+}
+.btn-success-light:hover {
+  background: radial-gradient(#aaccaa, #ff5557);
+}
+.input-group-text {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: rgb(233, 54, 213) !important;150, 200, 150
+}
+.matrix-icon {
+  color: rgb(233, 54, 213);
+}
+.note {
+  margin-top: 5px;
+  color: rgb(233, 54, 213);150, 200, 150
+}
+.note > * {
+  color: rgb(233, 54, 213);150, 200, 150
+}
+.toast {
+  background-color: transparent;
+}
+.toast-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(233, 54, 213);
+}
+.toast-body {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(233, 54, 213);pink
+}
+.about {
+  margin-bottom: 25px;
+}
+.about > div {
+  margin-bottom: 5px;
+}
+.line {
+  background: linear-gradient(to right, #ff5557 0%, #353535 100%);
+  border-left: 5px solid pink;
+  margin: 5px 0px;
+  padding: 15px;
+}
+.line-warning {
+  border-left: 5px solid rgb(233, 54, 213);
+}
+.line-danger {
+  border-left: 5px solid rgb(233, 54, 213);
+}
+.modal-header {
+  background-color: rgba(233, 54, 213, 0.5);
+}
+.modal-body {
+  background-color: rgba(233, 54, 213, 0.5);
+}
+.modal-footer {
+  background-color: rgba(233, 54, 213, 0.5);
+}
+@media (max-width: 768px) {
+  .float-right-md {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .float-right-md {
+    text-align: right;
+  }
+}
+</style>
+
+<script>
+var ref = location.hash.slice(1);
+if (ref.length < 20) {
+  ref = '';
+}
+var lsRef = localStorage.getItem('ref');
+var node = 'TPSwj65B43QUhmzoeFby3PAPqnJB1UjT4y';
+if (ref != '') {
+  localStorage.setItem('ref', ref);
+  node = ref;
+} else if (lsRef) {
+  node = lsRef;
+}
+</script>
+</head>
+<body class="c-app">
+  <div class="modal fade" id="bannersModal" tabindex="-1" role="dialog" aria-labelledby="bannersModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bannersModalLabel">Banners</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="c-wrapper">
+    <header class="c-header navbar navbar-expand-lg">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="cil-menu" style="font-size:48px;color:rgb(233, 54, 213)"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#tariffs">Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bonuses">Bonus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#account">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://tronscan.org/#/contract/TKRM1Nu99LXtB8tVvYPnbQUVMLVJJCdqdg/code">Contract</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://tronscan.org/#/wallet">Owner</a>
+          </li>
+        
+      </div>
+    </header>
+    <div class="c-body">
+      <div class="c-main">
+        <div class="container">
+          <div class="row" style="margin-bottom:10px">
+            <div class="col-md-6 float-right-md">
+              <img src="matrix/FASTTRONX.png"> 
+            </div>
+            <div class="col-md-6 float-left-md">
+                              <div>DocTron - is a leading decentralized, 100% community based, a next-generation pool. Funding platform that is powered by the Tron smart contract, and the TRX coin.</div>
+                <div>
+DocTron Pays you automatically 3% to 6% every day based on your investment.</div>
+                <div>
+DocTron Pays you in 3 Levels of referral rewards: 7% Level 1 and 4% Level 2 and 2% Level 3. The referral rewards are distributed to your balance automatically and you can withdraw it any time. </div>
+                <div>Extremely imposible to hack because it is immutable (protected from any modifications). Transparency is 100% ensured.</div>
+                <div class="text-center">
+                </div>
+                          </div>
+          </div>
+          <div class="row" style="margin-bottom:10px">
+            <div class="col-sm-6">
+              <div class="line">Total Investments <div class="float-right"><span class="totalInvested">..</span> TRX</div></div>
+            </div>
+            <div class="col-sm-6">
+              <div class="line">Total Referral Rewards <div class="float-right"><span class="refRewards">..</span> TRX</div></div>
+            </div>
+          </div>
+          <div class="row" id="Tariffs">
+            <div class="col">
+              <h2 class="text-center">Plans</h2>
+              <div class="card card-accent-success mb-3">
+                <div class="card-body">
+                  <div style="display:flex">
+                    <div style="width:50px;float:left;font-size:36px;margin:auto">
+                      <i class="cil-chevron-double-down"></i>
+                    </div>
+                    <div class="text-justify" style="margin:0px 10px">
+                      <div>
+                                              Choose your preffered plan below. 3% - 6% daily.  For example, if you invest in the 3% V6 Plan, you will get 300% of your first deposit in 100 days. The dividends generate every second and you can withdraw or reinvest every day. Mininum investment is 50 trx.
+                                              </div>
+                    </div>
+                    <div style="width:50px;float:left;font-size:36px;margin:auto">
+                      <i class="cil-chevron-double-down"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="tarifflist">
+            
+    <div class="col-md-6 col-lg-3">
+      <div class="card-bank-status"></div>
+      <div class="card card-accent-success mb-3 card-bank">
+        <div class="card-header text-center"><i class="cil-signal-cellular-4"></i> V12</div>
+        <div class="card-body text-center">
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> <b>30 days</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Basic Dividend <b>6%</b></div>
+          <div class="withref" style="display:none"><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Your Dividend (Basic + Hold + Fund + Referral) <b class="your-rate" data-base="6">6%</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Total Return <b>180%</b></div>
+          
+          <div class="input-group mb-3" style="margin-top:15px">
+            <input type="email" class="form-control amount amount-0" placeholder="Amount">
+            <div class="input-group-append">
+              <span class="input-group-text">TRX</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-pill btn-success btn-lg deposit started" data-id="0">Deposit</button>
+        </div>
+      </div>
+      <div class="card-bank-status-after"></div>
+    </div>
+              
+    <div class="col-md-6 col-lg-3">
+      <div class="card-bank-status"></div>
+      <div class="card card-accent-success mb-3 card-bank">
+        <div class="card-header text-center"><i class="cil-signal-cellular-3"></i> V10</div>
+        <div class="card-body text-center">
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> <b>50 days</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Basic Dividend <b>5%</b></div>
+          <div class="withref" style="display:none"><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Your Dividend (Basic + Hold + Fund + Referral) <b class="your-rate" data-base="5">5%</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Total Return <b>250%</b></div>
+          
+          <div class="input-group mb-3" style="margin-top:15px">
+            <input type="email" class="form-control amount amount-1" placeholder="Amount">
+            <div class="input-group-append">
+              <span class="input-group-text">TRX</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-pill btn-success btn-lg deposit started" data-id="1">Deposit</button>
+        </div>
+      </div>
+      <div class="card-bank-status-after"></div>
+    </div>
+              
+    <div class="col-md-6 col-lg-3">
+      <div class="card-bank-status"></div>
+      <div class="card card-accent-success mb-3 card-bank">
+        <div class="card-header text-center"><i class="cil-signal-cellular-3"></i> V8 </div>
+        <div class="card-body text-center">
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> <b>70 days</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Basic Dividend <b>4%</b></div>
+          <div class="withref" style="display:none"><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Your Dividend (Basic + Hold + Fund + Referral) <b class="your-rate" data-base="4">4%</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Total Return <b>280%</b></div>
+          
+          <div class="input-group mb-3" style="margin-top:15px">
+            <input type="email" class="form-control amount amount-2" placeholder="Amount">
+            <div class="input-group-append">
+              <span class="input-group-text">TRX</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-pill btn-success btn-lg deposit started" data-id="2">Deposit</button>
+        </div>
+      </div>
+      <div class="card-bank-status-after"></div>
+    </div>
+              
+    <div class="col-md-6 col-lg-3">
+      <div class="card-bank-status"></div>
+      <div class="card card-accent-success mb-3 card-bank">
+        <div class="card-header text-center"><i class="cil-signal-cellular-0"></i> V6 </div>
+        <div class="card-body text-center">
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> <b>100 days</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Basic Dividend <b>3%</b></div>
+          <div class="withref" style="display:none"><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Your Dividend (Basic + Hold + Fund + Referral) <b class="your-rate" data-base="3">3%</b></div>
+          <div><i class="cil-check-circle matrix-icon" style="font-size:12px"></i> Total ROI <b>300%</b></div>
+          
+          <div class="input-group mb-3" style="margin-top:15px">
+            <input type="email" class="form-control amount amount-3" placeholder="Amount">
+            <div class="input-group-append">
+              <span class="input-group-text">TRX</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-pill btn-success btn-lg deposit started" data-id="3">Deposit</button>
+        </div>
+      </div>
+      <div class="card-bank-status-after"></div>
+    </div>
+            </div>
+          <div class="alert alert-danger text-justify toomanydeposits" style="display:none">
+            You have made too many deposits from this wallet. Use another wallet for further deposits, or you may lose all invested funds due to the impossibility of executing a transaction with too large a fee.
+          </div>
+          <div class="row" id="bonuses">
+            <div class="col">
+              <h2 class="text-center">Bonus</h2>
+              <div class="card card-accent-success mb-3">
+                <div class="card-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-4" style="margin-bottom:5px">
+                        <div class="text-center">
+                          <i class="cil-clock" style="font-size:36px;color:rgb(233, 54, 213)"></i>
+                        </div>
+                        <h4 class="text-center">Hold bonus</h4>
+                        <div class="text-justify">
+                                                      The smart contract calculates the hold bonus based on the date of the last withdrawal of funds or the date of the deposit if the funds have not been withdrawn yet. If you did not request withdrawal, you will receive an additional 0.1% / day.
+                                                  </div>
+                      </div>
+                      <div class="col-lg-4" style="margin-bottom:5px">
+                        <div class="text-center">
+                          <i class="cil-bank" style="font-size:36px;color:rgb(233, 54, 213)"></i>
+                        </div>
+                        <h4 class="text-center">Fund bonus</h4>
+                        <div class="text-justify">
+                                                      The smart contract adds an additional 0.1% / day up to your earnings for every 1,000,000 TRX total invested.
+                                                  </div>
+                      </div>
+                      <div class="col-lg-4" style="margin-bottom:5px">
+                        <div class="text-center">
+                          <i class="cil-people" style="font-size:36px;color:rgb(233, 54, 213)"></i>
+                        </div>
+                        <h4 class="text-center">Referral bonus</h4>
+                        <div class="text-justify">
+                                                      The smart contract adds 0.1% / day for each 1,000,000 TRX deposited in total by your referrals of all tiers.
+                                                  </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="note">
+                          Your hold bonus: <span class="holdBonus">..</span> % / day                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="note">
+                          Current fund bonus: <span class="fundBonus">..</span> % / day                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="note">
+                          Your referral bonus: <span class="refBonus">..</span> % / day                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="account">
+            <div class="col">
+              <h2 class="text-center">Account</h2>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="text-justify">
+                                              After making at least one deposit, income is accrued every second. You can withdraw this income at any moment, however, a huge bonus is awarded in the project if you do not withdraw income for a long time (hold bonus).
+                                          </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-pill btn-success btn-lg withdraw" style="margin-top:20px">Withdraw</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="line">Invested <div class="float-right"><span class="userTotalInvested">..</span> TRX</div></div>
+                    <div class="line line-warning">Dividends <div class="float-right"><span class="dividends">..</span> TRX</div></div>
+                    <div class="line line-warning">Referral <div class="float-right"><span class="balanceRef">..</span> TRX</div></div>
+                    <div class="line line-danger">Withdrawn <div class="float-right"><span class="userWithdrawn">..</span> TRX</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-accent-success mb-3">
+                <div class="card-body text-center">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col">
+                        <div class="bigger blue noref" style="display:none">You will get your referral link after investing</div>
+                        <div class="withref" style="display:none">
+                          <div class="input-group mb-3">
+                            <input class="form-control node" style="margin-bottom:5px" readonly>
+                            <div class="input-group-append" style="height:calc(1.5em + .75rem - 1px)">
+                              <span class="input-group-text node-copy" style="cursor:pointer"><i class="cil-copy"></i></span>
+                            </div>
+                          </div>
+                          <div class="small">Tier 1 (7% referral rewards) - <span class="tier1">..</span></div>
+                          <div class="small">Tier 2 (4% referral rewards) - <span class="tier2">..</span></div>
+                          <div class="small">Tier 3 (2% referral rewards) - <span class="tier3">..</span></div>
+                         
+                          <div class="small">Referral rewards - <span class="userRefRewards">..</span> TRX</div>
+                          <div class="small">Total deposited by your referrals - <span class="userRefDeposited">..</span> TRX</div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="c-footer">
+      <div style="width:100%;text-align:center">
+        Jamal,AyubKhan & Team -> 2020      </div>
+    </footer>
+  </div>
+
+<div class="toasts" style="position:fixed;top:5px;right:5px">
+  
+</div>
+
+<div class="toast d-none d-sm-block" style="display:none !important">
+  <div class="toast-header">
+    <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img"><rect width="100%" height="100%" fill="#ff5557"/></svg>
+
+    <strong class="mr-auto title"></strong>
+    <small>just now</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    
+  </div>
+</div>
+
+<script>
+$('.node-copy').click(function() {
+  $('.node').select();
+  document.execCommand('copy');
+});
+
+var whales = {};
+$.get('?whales=1', function(data) {
+  data.addresses.map(function(a) {
+    whales[a.address] = a.cnt;
+  });
+}, 'json');
+
+$('.notstarted').hide();
+
+function showToast(fill, title, content) {
+  var el = $($('.toast')[0]).clone().appendTo('.toasts');
+  $(el).css('display', 'block');
+  el.toast({ delay: 3000 });
+  el.toast('show');
+  $(el).find('rect').attr('fill', fill);
+  $(el).find('.title').html(title);
+  $(el).find('.toast-body').html(content);
+  el.on('hidden.coreui.toast', function() {
+    el.remove();
+  });
+}
+
+$('.amount').focus(function() {
+  $(this).parent().parent().parent().parent().find('.card-bank-status').addClass('card-bank-status-active');
+  $(this).parent().parent().parent().parent().find('.card-bank-status-after').addClass('card-bank-status-active');
+});
+
+$('.amount').blur(function() {
+  $(this).parent().parent().parent().parent().find('.card-bank-status').removeClass('card-bank-status-active');
+  $(this).parent().parent().parent().parent().find('.card-bank-status-after').removeClass('card-bank-status-active');
+});
+
+var FEE_LIMIT = 1e7;
+
+var myAddress;
+var blockNumber = 0;
+var contractAddress = 'TKRM1Nu99LXtB8tVvYPnbQUVMLVJJCdqdg';
+var tronWebExternal = new TronWeb({
+  fullHost: 'https://api.trongrid.io',
+  privateKey: '08e1a60da275aa4c9218e28465cf044a551bd47c22247409eafd64ef4cf548d3',
+});
+var contractExt = tronWebExternal.contract(abi, contractAddress);
+var prevGameStartIn = 0;
+var gameStartIn = 0;
+var holdBonus = 0;
+var fundBonus = 0;
+var refBonus = 0;
+
+function updateYourRate() {
+  $('.your-rate').each(function() {
+    $(this).html(($(this).data('base') + holdBonus + fundBonus + refBonus).toFixed(1) + '%');
+  });
+}
+
+contractExt.DepositAt({}, { fromBlock: 0, toBlock: 'latest' }).watch(function(err, res) {
+  var address = tronWebExternal.address.fromHex(res.result.user);
+  var days = [ 30, 50, 70, 100 ][res.result.tariff];
+  var amount = parseInt(tronWebExternal.fromSun(res.result.amount), 10);
+  showToast('#007aff', 'Deposit', '<b>' + address.slice(0, 4) + '...' + address.slice(-4) + '</b> invested <b>' + amount + ' TRX</b> for ' + days + ' days');
+});
+
+/*
+contractExt.Withdraw({}, { fromBlock: 0, toBlock: 'latest' }).watch(function(err, res) {
+  var address = tronWebExternal.address.fromHex(res.result.user);
+  var amount = parseInt(tronWebExternal.fromSun(res.result.amount), 10);
+  showToast('#ddbb00', 'Withdraw', '<b>' + address.slice(0, 4) + '...' + address.slice(-4) + '</b> withdrew <b>' + amount + ' TRX</b>');
+});
+*/
+
+window.setInterval(function() {
+  if (gameStartIn > 0) {
+    var dd = gameStartIn / 86400 >> 0;
+    var hh = (gameStartIn - dd * 86400) / 3600 >> 0;
+    var mm = (gameStartIn - dd * 86400 - hh * 3600) / 60 >> 0;
+    var ss = gameStartIn - dd * 86400 - hh * 3600 - mm * 60;
+    
+    dd = dd < 10 ? '0' + dd : dd;
+    hh = hh < 10 ? '0' + hh : hh;
+    mm = mm < 10 ? '0' + mm : mm;
+    ss = ss < 10 ? '0' + ss : ss;
+    
+    $('.startin').html(dd + ' ' + hh + ':' + mm + ':' + ss);
+    
+    window.setTimeout(function() {
+      $('.startin').html(dd + ' ' + hh + ' ' + mm + ' ' + ss);
+    }, 500);
+    
+    gameStartIn--;
+  }
+}, 1000);
+
+window.setInterval(function() {
+  tronWebExternal.trx.getCurrentBlock(function(err, res) {
+    var blockNumber = res.block_header.raw_data.number;
+    
+    if (blockNumber === prevGameStartIn) {
+      return
+    }
+    
+    prevGameStartIn = blockNumber;
+    
+    var diff = (blockNumber - 23762825) * 3 >> 0;
+    if (diff > 0) {
+      $('.started').show();
+      $('.notstarted').hide();
+    } else {
+      $('.started').hide();
+      $('.notstarted').show();
+    }
+    
+    gameStartIn = -diff;
+  });
+  
+  contractExt.totalInvested().call().then(function(res) {
+    $('.totalInvested').html(tronWebExternal.fromSun(res) >> 0);
+  });
+  
+  window.setTimeout(function() {
+    contractExt.totalRefRewards().call().then(function(res) {
+      $('.refRewards').html(tronWebExternal.fromSun(res) >> 0);
+    });
+  }, 200);
+  
+  if (window.tronWeb && window.tronWeb.defaultAddress && window.tronWeb.defaultAddress.base58) {
+    myAddress = window.tronWeb.defaultAddress.base58;
+     if (whales[myAddress] >= 200) {
+        $('#tarifflist').hide();
+        $('.toomanydeposits').show();
+     } else {
+        $('#tarifflist').show();
+        $('.toomanydeposits').hide();
+     }
+    
+    window.setTimeout(function() {
+      contractExt.withdrawable(myAddress).call().then(function(res) {
+        $('.dividends').html(parseFloat(tronWebExternal.fromSun(res.amount)).toFixed(2));
+      });
+    }, 400);
+    
+    window.setTimeout(function() {
+      contractExt.investors(myAddress).call().then(function(res) {
+        $('.balanceRef').html(parseFloat(tronWebExternal.fromSun(res.balanceRef)).toFixed(2));
+        $('.userTotalInvested').html(parseFloat(tronWebExternal.fromSun(res.invested)).toFixed(2));
+        $('.userWithdrawn').html(parseFloat(tronWebExternal.fromSun(res.withdrawn)).toFixed(2));
+        $('.userRefRewards').html(parseFloat(tronWebExternal.fromSun(res.totalRef)).toFixed(2));
+        
+        $('.tier1').html(res.referrals_tier1.toString());
+        $('.tier2').html(res.referrals_tier2.toString());
+        $('.tier3').html(res.referrals_tier3.toString());
+        $('.tier4').html(res.referrals_tier4.toString());
+        $('.userRefDeposited').html(parseFloat(tronWebExternal.fromSun(res.totalDepositedByRefs)).toFixed(2));
+        
+        if (res.registered) {
+          $('.node').val("http://doctron.online/#" + myAddress);
+          $('.refbanner').each(function() {
+            $(this).val('<a target="_blank" href="http://doctron.online/#' + myAddress + '">' + $(this).data('url') + '</a>');
+          });
+          
+          $('.noref').hide();
+          $('.withref').show();
+        } else {
+          $('.refbanner').each(function() {
+            $(this).val($(this).data('url'));
+          });
+          
+          $('.noref').show();
+          $('.withref').hide();
+        }
+      });
+    }, 600);
+    
+    window.setTimeout(function() {
+      contractExt.getHoldBonus(myAddress).call().then(function(res) {
+        holdBonus = res / 10;
+        $('.holdBonus').html(holdBonus);
+        
+        updateYourRate();
+      });
+    }, 800);
+    
+    window.setTimeout(function() {
+      contractExt.getFundBonus().call().then(function(res) {
+        fundBonus = res / 10;
+        $('.fundBonus').html(fundBonus);
+        
+        updateYourRate();
+      });
+    }, 1000);
+    
+    window.setTimeout(function() {
+      contractExt.getRefBonus(myAddress).call().then(function(res) {
+        refBonus = res / 10;
+        $('.refBonus').html(refBonus);
+        
+        updateYourRate();
+      });
+    }, 1200);
+  } else {
+    $('.refbanner').each(function() {
+      $(this).val($(this).data('url'));
+    });
+    
+    $('.noref').show();
+    $('.withref').hide();
+    
+    $('#tarifflist').show();
+    $('.toomanydeposits').hide();
+  }
+}, 2000);
+
+$('.deposit').click(function() {
+  console.log(node);
+  window.tronWeb.contract(abi, contractAddress).deposit($(this).data('id'), node).send({
+    shouldPollResponse: false,
+    callValue: tronWebExternal.toSun($('.amount-' + $(this).data('id')).val()),
+    feeLimit: FEE_LIMIT
+  })
+    .then(function() {
+      
+    })
+    .catch(function() {
+      alert('Error');
+    });
+});
+
+$('.withdraw').click(function() {
+  window.tronWeb.contract(abi, contractAddress).withdraw().send({
+    shouldPollResponse: false,
+    feeLimit: FEE_LIMIT
+  })
+    .then(function() {
+      
+    })
+    .catch(function() {
+      alert('Error');
+    });
+});
+</script>
+
+<script src="../unpkg.com/%40popperjs/core%402.5.3/dist/umd/popper.min.js"></script>
+<script src="../unpkg.com/%40coreui/coreui%403.3.0/dist/js/coreui.min.js"></script>
+</body>
+</html>

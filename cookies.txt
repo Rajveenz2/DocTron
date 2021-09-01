@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.fasttronx.com	TRUE	/	FALSE	1999999999	__cfduid	dd0712724cee1373753cb6e9cc912ffb01606381826
+fasttronx.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+
